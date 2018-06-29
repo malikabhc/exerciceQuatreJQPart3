@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>exercice_4</title>
+    <style>
+      #rectangle{
+        width: 30px;
+        height: 10px;
+        margin : 5px;
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+<button type="button" class="button" id="size">Taille</button>
+<button type="button" class="button" id="green">Vert</button>
+<button type="button" class="button" id="firstColor">Couleur initiale</button>
+<button type="button" class="button" id="hide">Disparaître</button>
+<button type="button" class="button" id="show">Apparaître</button>
+<div class="rectangle" id="rectangle"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+      //Fonction globale
+      $(function() {
+      var height = 10;
+      //Condition pour modification de la taille du rectangle
+      $('#size').click(function() {
+        if (height == 100) {
+          height = 10;
+        }else{
+          height +=10;
+        }
+          $('#rectangle').css('height', height + 'px');
+      });
+      //Modification de la couleur en vert
+      $('#green').click(function () {
+        $('#rectangle').css('background','green');
+      });
+      //Modification de la couleur à la couleur initiale soit le violet
+      $('#firstColor').click(function () {
+        $('#rectangle').css('background','purple');
+      });
+      //Fonction permettant de cacher le rectangle
+      $('#hide').click(function () {
+        $('#rectangle').hide();
+      });
+      //Fonction permettant de faire réapparaitre le rectangle
+      $('#show').click(function () {
+        $('#rectangle').show();
+      });
+    });
+    </script>
+  </body>
+</html>
